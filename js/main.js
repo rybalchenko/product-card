@@ -23,12 +23,41 @@
 				qtyField.val(oldVal);
 			}
 		});
-		var prodColor = $('[name="product-color"]');
-		prodColor.on('change', function(){
-			// console.log($(this).val());
 
-		});
+	var prodColor = $('[name="product_color"]'),
+	colorBlack = $('.headphones-black'),
+	colorGrey = $('.headphones-grey');
+
+	prodColor.on('change', function(){
+		var color = $(this).val();
+		if(color === 'black'){
+			colorBlack.show();
+			colorGrey.hide();
+		}else{
+			colorBlack.hide();
+			colorGrey.show();
+		};
 
 	});
 
+
+});
 })(jQuery);
+
+
+
+		// var prodColor = $('[name="product_color"]');
+
+		// prodColor.on('change', function(){
+		// 	console.log($(this).val());
+		// 	if($(this).val()=='black'){
+		// 		$('.headphones-black').fadeIn('slow');
+		// 		$('.headphones-grey').css('display', 'none');
+		// 	}
+		// 	else {
+		// 		if($(this).val()=='grey'){
+		// 			$('.headphones-black').css('display', 'none');
+		// 			$('.headphones-grey').fadeIn('slow');
+		// 		}
+		// 	}
+		// });
